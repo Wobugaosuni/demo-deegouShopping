@@ -1,0 +1,73 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+.menu{
+/*	IE6不支持fixed，解决方法：设置hack*/
+	position: fixed;
+/*	让菜单偏移到中间，再根据.content的宽的一半进行定位！！套路！*/
+	left: 50%;
+	top:100px;
+	margin-left: 400px;
+
+}
+
+/*ie6 通过设置空图片解决跳变的问题*/
+*html,*html body{
+	background-image: url(about:blank);
+	background-attachment: fixed;
+}
+
+/*ie6的兼容 hack*/
+*html .menu{
+	position:fixed;
+	position: absolute;
+	top: expression(((e=document.documentElement.scrollTop)?e:document.body.scrollTop)+100+'px');
+}
+
+.menu ul li a{
+	display: block;
+	width: 70px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 16px;
+	color: black;
+}
+.current{
+	background: #4DA6EA;
+}
+li{
+	list-style: none;
+}
+.content{
+	width: 760px;
+	margin: 0 auto;
+	padding: 20px;
+}
+.content h1{
+	color: #4DA6EA;
+	margin-bottom: 10px;
+	font-size: 25px;
+}
+.item{
+	border: 2px #4DA6EA dotted;
+	padding: 20px;
+	margin-bottom: 20px;
+}
+.item h2{
+	font-size: 18px;
+	border-bottom: 2px #4DA6EA solid;
+	padding-bottom: 5px;
+	margin-bottom: 10px;
+}
+.item ul li{
+	display: inline;
+	margin-right: 20px;
+}
+.item img{
+	width: 216px;
+	height: 216px;
+	margin-bottom: 20px;
+}
